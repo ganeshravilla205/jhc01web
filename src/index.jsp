@@ -1,0 +1,5 @@
+<HTML>
+  <BODY>
+    <H2>WELCOME TO JAVAHOMECLOUD</H2>
+    </BODY>
+    </HTML.
