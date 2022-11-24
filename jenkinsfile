@@ -3,7 +3,7 @@ piepeline{
     stages{
         stage("jenkinsfile demo"){
             steps{
-                echo ("jenkins file ci-cd demo")
+                echo "jenkins file ci-cd demo"
             }
         }
     }
