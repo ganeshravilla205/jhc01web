@@ -1,0 +1,10 @@
+piepeline{
+    agent any
+    stages{
+        stage("jenkinsfile demo"){
+            steps{
+                echo ("jenkins file ci-cd demo")
+            }
+        }
+    }
+}
