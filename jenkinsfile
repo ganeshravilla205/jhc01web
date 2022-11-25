@@ -1,6 +1,9 @@
 pipeline{
     agent any
     stages{
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
          stage("Maven Build"){
             steps{
                 sh "mvn clean package"
@@ -32,32 +35,31 @@ pipeline{
         stage("maven build"){
             steps{
                 sh 'mvn clean package'
-
             }
         }
-        stage("deploy to develop"){
-        when{
-        branch "develop"
+        stage("Deploy to Dev"){
+            when {
+                branch "develop"
+            }
             steps{
-                echo "deploying to develop branch"
+                echo "deploy to development server"
             }
         }
-        }
-          stage("deploy to stage"){
-          when{
-          branch "stage"
+        stage("Deploy to stage"){
+            when {
+                branch "stage"
+            }
             steps{
-                echo "deploying to stage branch"
+                echo "deploy to stage"
             }
         }
-        }
-        stage("deploy to prod"){
-        when{
-        branch "prod"
+        stage("Deploy to prod"){
+            when {
+                branch "main"
+            }
             steps{
-                echo "deploying to prod branch"
+                echo "deploy to prod"
             }
-        }
         }
     }
 }
