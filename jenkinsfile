@@ -8,8 +8,7 @@ pipeline{
              }
          stage("deploy war file to nexus"){
             steps{
-                sh "mvn clean package"
-            }
+nexusArtifactUploader artifacts: [[artifactId: 'jhc01web', classifier: '', file: '/target/jhc01web/1.0.0.jar', type: 'jar']], credentialsId: 'nexus3', groupId: 'in.javahome.app', nexusUrl: '172.31.10.55', nexusVersion: 'nexus3', protocol: 'http', repository: 'http://35.154.153.57:8081/repository/simpleapp-deploy-release/', version: '1.0.0'            }
        }
     }
 }
