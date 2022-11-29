@@ -8,7 +8,7 @@ pipeline{
              }
          stage("deploy war file to nexus"){
             steps{
-           sh "nexusArtifactUploader credentialsId: 'nexus3', groupId: 'in.javahome.app', nexusUrl: '172.31.10.55', nexusVersion: 'nexus3', protocol: 'http', repository: '/target/jhc01web/1.0-SNAPSHOT.jar', version: '1.0-SNAPSHOT'
+           sh "nexusArtifactUploader credentialsId: 'nexus3', groupId: 'in.javahome.app', nexusUrl: '172.31.10.55', nexusVersion: 'nexus3', protocol: 'http', repository: '/target/jhc01web/1.0-SNAPSHOT.jar', version: '1.0-SNAPSHOT'"
        }
     }
 }
